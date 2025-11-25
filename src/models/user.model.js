@@ -1,5 +1,6 @@
 //creating user model here
 const mongoose = require('mongoose');
+// import bcryptjs
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -18,12 +19,12 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         minLength: 6,
-        maxLength: 50
     },
     
 }, {
     timestamps: true
 })
+
 //exporting user model
 const User= mongoose.model('User', userSchema);
 module.exports = User;
